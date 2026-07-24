@@ -1,7 +1,26 @@
 aid: cloud-commerce
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cloud-commerce.png
 name: Cloud Commerce
-description: Cloud Commerce is a company surfaced as a portfolio company of 500-global and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: 'Cloud Commerce (CloudCommerce) is a Bangkok, Thailand-based venture
+  tech builder helping small and medium enterprises across Southeast Asia sell globally.
+  Backed by 500 Global (500 Startups) at the seed stage, it operates three commerce
+  platforms: FastShip, a cross-border e-commerce logistics platform; CloudMall, an
+  e-commerce distribution platform to build, run, and scale online marketplaces; and
+  KOLLAB, an influencer-commerce platform connecting brands with over 100,000 KOLs
+  across Instagram, TikTok, and Facebook. The company connects SME product data to
+  global online marketplaces and logistics providers. No public developer/API surface
+  was found during enrichment (no docs, OpenAPI, or /.well-known discovery endpoints).'
 url: https://raw.githubusercontent.com/api-evangelist/cloud-commerce/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,9 +30,16 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
+- E-Commerce
+- Logistics
+- Marketplace
+- Influencer Marketing
+- Cross-Border Commerce
+- SME
+- Southeast Asia
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -21,5 +47,12 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/cloud-commerce-domain-security.yml
 - type: Website
   url: https://cloudcommerce.co
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

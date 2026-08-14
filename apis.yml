@@ -1,36 +1,44 @@
 aid: cloud-commerce
 accessModel:
-  pricing: unknown
-  onboarding: unknown
+  pricing: contact
+  onboarding: contact
   trial: false
   try_now: false
   public: false
-  label: Unknown
-  confidence: low
-  source: []
-  generated: '2026-07-22'
-  method: derived
+  label: Contact Sales
+  confidence: medium
+  source:
+  - https://fastship.co/fastship-for-business/
+  - https://fastship.co/api
+  generated: '2026-08-13'
+  method: searched
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cloud-commerce.png
 name: Cloud Commerce
-description: 'Cloud Commerce (CloudCommerce) is a Bangkok, Thailand-based venture
-  tech builder helping small and medium enterprises across Southeast Asia sell globally.
+description: 'Cloud Commerce (CloudCommerce) is a Bangkok, Thailand-based venture tech
+  builder helping small and medium enterprises across Southeast Asia sell globally.
   Backed by 500 Global (500 Startups) at the seed stage, it operates three commerce
   platforms: FastShip, a cross-border e-commerce logistics platform; CloudMall, an
   e-commerce distribution platform to build, run, and scale online marketplaces; and
   KOLLAB, an influencer-commerce platform connecting brands with over 100,000 KOLs
   across Instagram, TikTok, and Facebook. The company connects SME product data to
-  global online marketplaces and logistics providers. No public developer/API surface
-  was found during enrichment (no docs, OpenAPI, or /.well-known discovery endpoints).'
+  global online marketplaces and logistics providers. FastShip runs a live versioned
+  REST API at openapi.fastship.co and markets API integration to business accounts,
+  but publishes no developer reference, no OpenAPI, and no SDKs: the documentation
+  host docs.fastship.co accepts no connections and fastship.co/api is a one-paragraph
+  marketing page. FastShip does serve a hand-authored llms.txt and a Pulsetic-hosted
+  status page.'
 url: https://raw.githubusercontent.com/api-evangelist/cloud-commerce/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - 500-global
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: enriched
+x-tier-reason: >-
+  Promoted from stub on 2026-08-13. A live FastShip REST API and two provider-published
+  llms.txt files were found; the API contract itself remains gated (see x-coverage).
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-18'
+modified: '2026-08-13'
 tags:
 - Company
 - E-Commerce
@@ -40,7 +48,57 @@ tags:
 - Cross-Border Commerce
 - SME
 - Southeast Asia
-apis: []
+- Shipping
+- Fulfillment
+- Thailand
+apis:
+- name: FastShip Open API
+  description: 'The versioned REST API behind FastShip, Cloud Commerce''s cross-border
+    e-commerce logistics platform. Discovered live at openapi.fastship.co: GET /api/v2
+    returns "Welcome to API Version 2.0" and POST /api/v2/login exchanges an email and
+    password for a token. The surface is a Laravel application that returns a custom
+    {message, description, data} JSON envelope and X-RateLimit-* headers. FastShip
+    markets API integration to business accounts, but no public reference, OpenAPI or
+    SDK is published, so the operation set beyond the login endpoint is not
+    establishable without credentials.'
+  humanURL: https://fastship.co/api
+  baseURL: https://openapi.fastship.co/api/v2
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cloud-commerce.png
+  tags:
+  - Shipping
+  - Logistics
+  - Cross-Border Commerce
+  - E-Commerce
+  - Fulfillment
+  properties:
+  - type: Authentication
+    url: authentication/cloud-commerce-authentication.yml
+  - type: Conventions
+    url: conventions/cloud-commerce-conventions.yml
+  - type: RateLimits
+    url: rate-limits/cloud-commerce-rate-limits.yml
+  - type: Lifecycle
+    url: lifecycle/cloud-commerce-lifecycle.yml
+  - type: ErrorCatalog
+    url: errors/cloud-commerce-problem-types.yml
+  - type: Conformance
+    url: conformance/cloud-commerce-conformance.yml
+  - type: StatusPage
+    url: https://status.fastship.co/
+  - type: SignUp
+    url: https://app.fastship.co/joinus
+  - type: Login
+    url: https://app.fastship.co/login
+  - type: Support
+    url: https://fastship.co/contactus/
+  - type: HelpCenter
+    url: https://fastship.co/help/
+  - type: Blog
+    url: https://fastship.co/blog/
+  - type: PrivacyPolicy
+    url: https://fastship.co/privacy-policy/
+  - type: LLMsTxt
+    url: llms/cloud-commerce-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -51,8 +109,80 @@ common:
   url: security/cloud-commerce-domain-security.yml
 - type: Website
   url: https://cloudcommerce.co
+- type: LLMsTxt
+  url: llms/cloud-commerce-llms.txt
+- type: Plans
+  url: plans/cloud-commerce-plans-pricing.yml
+- type: Packages
+  url: packages/cloud-commerce-packages.yml
+- type: RateLimits
+  url: rate-limits/cloud-commerce-rate-limits.yml
+- type: Conventions
+  url: conventions/cloud-commerce-conventions.yml
+- type: Lifecycle
+  url: lifecycle/cloud-commerce-lifecycle.yml
+- type: StatusPage
+  url: https://status.fastship.co/
+- type: Support
+  url: https://fastship.co/contactus/
+- type: HelpCenter
+  url: https://fastship.co/help/
+- type: Blog
+  url: https://fastship.co/blog/
+- type: SignUp
+  url: https://app.fastship.co/joinus
+- type: Login
+  url: https://app.fastship.co/login
+- type: TermsOfService
+  url: https://fastship.co/terms/
+- type: PrivacyPolicy
+  url: https://fastship.co/privacy-policy/
+# NOT EMITTED, deliberately — the underlying thing is absent and the pointer would
+# assert a provider surface that does not exist:
+#   WellKnown        every /.well-known/ path 404s on all seven hosts
+#                    (see well-known/cloud-commerce-well-known.yml)
+#   MCPServer        no server, hosted or local; no OpenAPI to derive a candidate from
+#                    (see mcp/cloud-commerce-mcp.yml)
+#   AgentCard        no A2A card on any host
+#   Authentication   auth is UNDOCUMENTED; the artifact is a probe record, kept on the
+#                    API entry rather than in common[] so it cannot earn the
+#                    "authentication documented" check
+#   Documentation / APIReference / DeveloperPortal / GettingStarted
+#                    docs.fastship.co accepts no connections; fastship.co/api is a
+#                    one-paragraph marketing page
+#   Idempotency / Deprecation / Pricing / Compliance / SDKs / GitHubOrganization
+#                    none found
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-13'
+  status: enriched
+  artifacts_added: 9
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+  note: >-
+    Overturns the previous "no public developer/API surface" finding. Subdomain
+    enumeration on fastship.co surfaced a live versioned REST API at
+    openapi.fastship.co/api/v2, and fastship.co and kollabasia.com both serve a real
+    llms.txt. No OpenAPI, SDK, MCP server or agent card exists on any host.
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    FastShip's API is live and answers anonymously at openapi.fastship.co/api/v2, but the
+    only public route to it is a lead-capture form: fastship.co/api is a one-paragraph
+    WordPress portfolio page titled "API & Widget", the documentation host
+    docs.fastship.co resolves to 13.251.14.8 and then accepts no TCP connection, and the
+    "FastShip For Business" page that markets API integration ends in a registration form
+    with no reference, no spec and no pricing behind it.
+  evidence:
+  - url: https://openapi.fastship.co/api/v2
+    status: 200
+  - url: https://openapi.fastship.co/api/v2/login
+    status: 401
+  - url: https://fastship.co/api
+    status: 200
+  - url: https://docs.fastship.co/
+    status: 0
+  - url: https://fastship.co/docs
+    status: 404
+  - url: https://openapi.fastship.co/openapi.json
+    status: 404
+  checked: '2026-08-13'

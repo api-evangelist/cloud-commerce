@@ -1,0 +1,14 @@
+{
+  "repo": "cloud-commerce",
+  "feeds": [
+    {
+      "source": "https://fastship.co/help/",
+      "feed_url": "https://fastship.co/feed/",
+      "title": "",
+      "saved": 1,
+      "method": "discovered"
+    }
+  ],
+  "post_count": 1,
+  "fetched": "2026-08-15T12:22:01Z"
+}

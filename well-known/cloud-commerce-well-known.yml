@@ -1,0 +1,56 @@
+generated: '2026-08-13'
+method: probed
+source: live anonymous HTTPS probes, 2026-08-13
+note: >-
+  RECORDED ABSENCE. Every /.well-known/ path was probed against all seven Cloud Commerce
+  hosts and NOT ONE returned a real document. No WellKnown or SecurityTxt pointer is
+  emitted in apis.yml, because the pointer would assert the provider serves a surface it
+  does not. Two hosts are soft-200/soft-500 SPA catch-alls that answer every path with
+  the same HTML shell — those are counted as misses, not hits.
+paths_probed:
+- /.well-known/security.txt
+- /.well-known/openid-configuration
+- /.well-known/oauth-authorization-server
+- /.well-known/oauth-protected-resource
+- /.well-known/api-catalog
+- /.well-known/ai-plugin.json
+- /.well-known/agent-card.json
+- /.well-known/agent.json
+hosts:
+- host: cloudcommerce.co
+  role: corporate marketing site (WordPress)
+  result: all 404
+  soft_response: false
+- host: fastship.co
+  role: FastShip product site (WordPress)
+  result: all 404
+  soft_response: false
+- host: kollabasia.com
+  role: KOLLAB product site (WordPress)
+  result: all 404
+  soft_response: false
+- host: openapi.fastship.co
+  role: FastShip Open API host (Laravel 8)
+  result: all 404
+  soft_response: false
+- host: api.fastship.co
+  role: internal API host (Laravel, PHP 7.4)
+  result: all 404
+  soft_response: false
+- host: app.fastship.co
+  role: customer web application
+  result: all 500
+  soft_response: true
+  note: >-
+    Returns an identical 35,095-byte HTML error shell for every /.well-known/ path.
+    Not a document. Counted as a miss.
+- host: track.fastship.co
+  role: shipment tracking SPA
+  result: 404 on /.well-known/*, soft-200 on root-level paths
+  soft_response: true
+  note: >-
+    Answers 200 with the same 9,985-byte SPA shell for /openapi.json, /swagger.json,
+    /apis.json, /llms.txt and /sitemap.xml. Classic SPA catch-all false positive.
+    Counted as a miss on every path.
+hits: []
+pointer_emitted: false

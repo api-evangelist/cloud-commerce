@@ -42,6 +42,19 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Cloud Commerce is a company surfaced as a portfolio company of 500-global and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Cloud Commerce is a Bangkok, Thailand venture tech builder, surfaced as a portfolio company of
+500 Global and profiled here from its public surface.
+
+It operates three commerce platforms: **FastShip** (cross-border e-commerce logistics),
+**CloudMall** (marketplace distribution) and **KOLLAB** (influencer commerce).
+
+**API surface.** FastShip runs a live, versioned REST API at `https://openapi.fastship.co/api/v2`
+and markets API integration to business accounts. There is no public developer reference: the
+documentation host `docs.fastship.co` accepts no connections, and `fastship.co/api` is a
+one-paragraph marketing page. No OpenAPI, SDK, MCP server or agent card was found on any host.
+FastShip does publish a hand-authored `llms.txt` and a Pulsetic-hosted status page.
+
+Artifacts in this repo are probe records — what anonymous requests to the public surface actually
+returned — not provider documentation. Each carries its own `method:` and `source:`.
 
 Backed by: 500-global — https://cloudcommerce.co

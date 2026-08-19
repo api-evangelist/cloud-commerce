@@ -1,11 +1,21 @@
-generated: '2026-07-18'
+generated: '2026-08-13'
 method: probed
 source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
 hosts:
 - host: cloudcommerce.co
   https: true
   tls_version: TLSv1.3
-  cert_expires: Sep 17 23:59:59 2026 GMT
+  cert_expires: Feb  2 23:59:59 2027 GMT
+  hsts: false
+- host: fastship.co
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 27 23:59:59 2026 GMT
+  hsts: false
+- host: openapi.fastship.co
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Jan  4 23:59:59 2027 GMT
   hsts: false
 domains:
 - domain: cloudcommerce.co
@@ -13,3 +23,9 @@ domains:
   caa: []
   spf: false
   dmarc: false
+- domain: fastship.co
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none

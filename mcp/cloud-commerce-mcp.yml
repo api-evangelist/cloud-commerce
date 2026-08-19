@@ -1,0 +1,43 @@
+generated: '2026-08-13'
+method: probed
+source: live MCP JSON-RPC probes and registry search, 2026-08-13
+note: >-
+  RECORDED ABSENCE. Cloud Commerce ships no MCP server, hosted or local, and no candidate
+  tool list could be derived because the provider publishes no OpenAPI. No MCPServer
+  pointer is emitted in apis.yml.
+status: none
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: probed
+probes:
+- url: https://openapi.fastship.co/mcp
+  method: POST
+  body: '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
+  status: 404
+- url: https://openapi.fastship.co/api/v2/mcp
+  method: POST
+  body: '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
+  status: 404
+- url: https://fastship.co/mcp
+  method: POST
+  body: '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
+  status: 404
+- url: https://fastship.co/.well-known/ai-plugin.json
+  method: GET
+  status: 404
+- url: https://openapi.fastship.co/.well-known/oauth-protected-resource
+  method: GET
+  status: 404
+registry_search:
+  npm: no @cloudcommerce/mcp, @fastship/mcp or equivalent published
+  result: none
+tools: []
+tools_note: >-
+  No candidate tool list is derived. The pipeline derives candidates from OpenAPI
+  operations; Cloud Commerce publishes no OpenAPI, and the only two anonymously reachable
+  endpoints (GET /api/v2 and POST /api/v2/login) do not constitute a tool surface.
+  Inventing tool names from product marketing would be fabrication.

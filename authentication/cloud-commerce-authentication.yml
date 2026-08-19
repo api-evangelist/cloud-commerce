@@ -1,0 +1,71 @@
+generated: '2026-08-13'
+method: probed
+source: https://openapi.fastship.co/api/v2/login
+note: >-
+  PROBED, NOT DERIVED. Cloud Commerce publishes no OpenAPI and no public authentication
+  reference, so derive-authentication.py had nothing to read. This profile is built
+  entirely from anonymous live requests against the FastShip Open API host, and records
+  only what those responses actually proved. No scheme, header name, token lifetime or
+  scope is asserted that was not observed.
+apis:
+- name: FastShip Open API
+  baseURL: https://openapi.fastship.co/api/v2
+  schemes:
+  - id: login_token
+    type: http
+    style: bearer-token-via-credential-exchange
+    confidence: medium
+    observed: true
+    token_endpoint: https://openapi.fastship.co/api/v2/login
+    token_endpoint_methods:
+    - GET
+    - HEAD
+    - POST
+    grant: password
+    credentials:
+    - field: email
+      required: true
+      evidence: >-
+        POST {} returned 400 with data.error.email = ["The email field is required."]
+    - field: password
+      required: true
+      evidence: >-
+        POST {} returned 400 with data.error.password = ["The password field is required."]
+    purpose_stated_by_provider: For logged in and generate Token.
+    note: >-
+      The endpoint's own 400 body states its purpose is "For logged in and generate
+      Token." A bad-credential POST returns 401 with "Email or Password incorrect."
+      The response header name that carries the issued token, its lifetime, its refresh
+      mechanism and the header an authenticated call must send are NOT public and were
+      NOT probed — issuing a token would require real credentials, which this pipeline
+      never uses.
+evidence:
+- url: https://openapi.fastship.co/api/v2
+  method: GET
+  status: 200
+  body: Welcome to API Version 2.0
+- url: https://openapi.fastship.co/api/v2/login
+  method: GET
+  status: 401
+  body: '{"message":"failed","description":"Login failed","data":[]}'
+- url: https://openapi.fastship.co/api/v2/login
+  method: POST
+  status: 400
+  note: empty JSON body; returned per-field validation errors for email and password
+- url: https://openapi.fastship.co/api/v2/login
+  method: POST
+  status: 401
+  note: syntactically valid but non-existent credentials; "Email or Password incorrect."
+- url: https://openapi.fastship.co/api/v2/login
+  method: OPTIONS
+  status: 200
+  allow: GET,HEAD,POST
+gaps:
+- no OpenAPI or Swagger document is published on any Cloud Commerce host
+- no public authentication reference page
+- >-
+  no /.well-known/openid-configuration or /.well-known/oauth-authorization-server on any
+  host, so this is not an OAuth or OIDC surface
+- >-
+  the authenticated request header (Authorization: Bearer vs a custom header) is
+  undocumented and unverifiable without credentials

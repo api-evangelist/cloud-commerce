@@ -1,0 +1,55 @@
+generated: '2026-08-13'
+method: probed
+source: live response headers from https://openapi.fastship.co/api/v2 (2026-08-13)
+note: >-
+  Cloud Commerce documents no rate limits anywhere public. The numbers below were NOT
+  read from documentation — they were observed on the wire on anonymous requests to the
+  FastShip Open API, which returns X-RateLimit-* headers on every response. This is the
+  runtime signal an agent actually needs, and it is the only rate-limit evidence that
+  exists for this provider.
+documented: false
+docs: null
+limit_count: 1
+limits:
+- name: default
+  scope: unknown
+  scope_note: >-
+    Anonymous requests share a counter. Whether the bucket is per-IP, per-key or global
+    is not stated by the provider and cannot be established from a single client.
+  limit: 1000
+  window: unknown
+  window_note: >-
+    No RateLimit-Reset or Retry-After header is returned on a successful response, so
+    the refill window is not observable without exhausting the bucket — which this
+    pipeline does not do.
+  burst: null
+  observed_on:
+  - https://openapi.fastship.co/api/v2
+  - https://openapi.fastship.co/api/v2/login
+response_headers:
+- header: X-RateLimit-Limit
+  observed_value: '1000'
+  present: true
+  standard: legacy X-RateLimit-* (pre-RFC 9331)
+- header: X-RateLimit-Remaining
+  observed_value: '989, 984, 983 across successive probes'
+  present: true
+  note: Decrements per request, confirming the counter is live and enforced.
+- header: RateLimit-Limit
+  present: false
+  note: The RFC 9331 draft-standard form is NOT served.
+- header: RateLimit-Policy
+  present: false
+- header: Retry-After
+  present: false
+  note: Not observed on any 2xx/4xx response.
+exhaustion:
+  status_code: unknown
+  note: >-
+    Laravel's throttle middleware conventionally answers 429, but this was not observed
+    and is therefore not asserted. Deliberately not probed to exhaustion.
+gaps:
+- no published rate-limit documentation on any host
+- no RateLimit-Reset header, so a client cannot compute when the bucket refills
+- no RFC 9331 RateLimit / RateLimit-Policy headers
+- exhaustion status code and Retry-After behavior undocumented and unobserved

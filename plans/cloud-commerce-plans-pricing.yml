@@ -1,0 +1,52 @@
+generated: '2026-08-13'
+method: searched
+source: https://fastship.co/fastship-for-business/
+note: >-
+  Cloud Commerce publishes NO API plans, tiers, quotas or pricing of any kind. API access
+  is marketed only as a feature of the "FastShip For Business" account, which is obtained
+  through a lead-capture registration form. Consumer shipping rates are published
+  per-destination on the marketing site, but those are freight prices, not API plans, and
+  are recorded separately below so they are not mistaken for one.
+plan_count: 0
+plans: []
+api_access:
+  model: contact-to-register
+  self_serve_signup: false
+  pricing_published: false
+  free_tier: false
+  trial: false
+  entry_point: https://fastship.co/fastship-for-business/
+  entry_point_status: 200
+  evidence: >-
+    The FastShip For Business page lists API connection as a benefit — "รองรับธุรกิจ
+    E-Commerce ไม่ว่าจะเป็นการเชื่อมต่อ API หรือการอัพโหลดข้อมูลผ่านไฟล์" ("supports
+    e-commerce businesses, whether by API connection or by file upload") — and then ends
+    in a registration form. No price, quota, or plan is attached to it anywhere.
+  account_signup: https://app.fastship.co/joinus
+  account_signup_status: 200
+consumer_pricing:
+  note: >-
+    NOT an API plan. Recorded only to document what pricing the provider DOES publish, so
+    a later run does not mistake these pages for developer plans.
+  model: per-shipment freight rates by weight and destination country
+  example: >-
+    "ส่งพัสดุไปอเมริกา เริ่มต้นที่ 349 บาท" (shipping to the USA from 349 THB) on the
+    fastship.co footer.
+  currency: THB
+  rate_calculator:
+    present: true
+    location: https://fastship.co/ homepage form (weight in grams + destination country)
+    backend: https://guest.fastship.co/?weight=
+    backend_status: 000
+    backend_note: >-
+      The form's target host guest.fastship.co does not resolve (NXDOMAIN, checked
+      2026-08-13). The published rate calculator has no working backend.
+  machine_readable: false
+  machine_readable_note: >-
+    No pricing API, rate-card JSON or downloadable tariff file is published. Rates exist
+    only as prose on per-destination WordPress landing pages.
+gaps:
+- no API pricing page
+- no plan tiers, quotas or overage terms
+- no self-serve API key issuance
+- no published rate card in any machine-readable form

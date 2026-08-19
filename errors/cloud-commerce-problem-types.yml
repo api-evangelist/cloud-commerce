@@ -1,0 +1,76 @@
+generated: '2026-08-13'
+method: probed
+source: live anonymous requests to https://openapi.fastship.co/api/v2 (2026-08-13)
+note: >-
+  NOT A PROVIDER ERROR CATALOG. Cloud Commerce publishes no error reference, so there was
+  nothing to search and no OpenAPI 4xx/5xx responses to derive from. This file records the
+  error SHAPES actually observed on the wire, so an integrator knows what to parse. No
+  ErrorCatalog pointer is emitted in apis.yml: the finding is precisely that this API
+  returns no error codes at all, and the pointer would credit a catalog that does not
+  exist.
+api: FastShip Open API
+baseURL: https://openapi.fastship.co/api/v2
+format: custom
+rfc9457: false
+rfc9457_note: >-
+  No application/problem+json media type and no type/title/status/detail/instance members.
+  Errors are returned as application/json in the same {message, description, data}
+  envelope the API uses for success.
+machine_readable_error_codes: false
+machine_readable_error_codes_note: >-
+  No error code, enum, or type URI is returned anywhere. A client must branch on the HTTP
+  status, or string-match the human-readable `description` prose — which is written in a
+  mix of English and product phrasing and is not a stable contract.
+envelope:
+  message: coarse status word, e.g. "failed"
+  description: human-readable prose
+  data: empty array on a bare failure, or an object carrying data.error with per-field
+    validation messages
+problem_types:
+- http_status: 400
+  observed_at: POST /api/v2/login
+  code: null
+  title: Validation failure
+  envelope_message: failed
+  envelope_description: For logged in and generate Token.
+  detail: >-
+    Returned when required fields are absent. data.error carries a Laravel validator map
+    of field name to an array of messages, e.g. {"email":["The email field is required."],
+    "password":["The password field is required."]}.
+  remediation: Send both email and password in the JSON body.
+  note: >-
+    The `description` on this status is the endpoint's PURPOSE statement, not an error
+    message. A client that surfaces `description` to a user will show "For logged in and
+    generate Token." as the error text.
+- http_status: 401
+  observed_at: POST /api/v2/login, GET /api/v2/login
+  code: null
+  title: Authentication failure
+  envelope_message: failed
+  envelope_description: Email or Password incorrect. Please try again.
+  detail: >-
+    Returned for wrong credentials on POST. GET on the same path returns 401 with
+    "Login failed" and an empty data array.
+  remediation: Supply valid credentials. There is no documented lockout or backoff policy.
+- http_status: 404
+  observed_at: any unmatched path under /api/v2
+  code: null
+  title: Route not found
+  envelope_message: null
+  envelope_description: null
+  detail: >-
+    Does NOT use the {message, description, data} envelope. Returns a framework exception
+    object containing an `exception` class name and server-side file path instead.
+  remediation: Check the path. A client cannot parse 404s with the same code path it uses
+    for every other error.
+  note: >-
+    Recorded as a contract inconsistency, not as a security finding. The practical effect
+    is that error handling cannot be uniform across this API.
+decline_codes:
+  applicable: false
+  note: FastShip is a logistics API, not a payments/authorization API.
+gaps:
+- no published error reference of any kind
+- no error codes, so failures cannot be handled programmatically by cause
+- error envelope is not uniform across status codes
+- no RFC 9457 problem+json

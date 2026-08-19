@@ -1,0 +1,20 @@
+# FastShip by CloudCommerce
+
+> FastShip คือแพลตฟอร์ม logistics ระหว่างประเทศสำหรับ e-commerce ไทย
+> ให้บริการ SME และผู้ขายออนไลน์ที่ต้องการส่งสินค้าไปต่างประเทศ
+> มีผู้ใช้งานกว่า 20,000 ราย และประสบการณ์ 15 ปีในตลาด
+
+## Core Services
+    - [การส่งสินค้าระหว่างประเทศ](<https://fastship.co/services/international>)
+    - [เปรียบเทียบราคาขนส่ง](<https://fastship.co/compare>)
+    - [Track & Trace](<https://fastship.co/tracking>)
+    - [API Integration สำหรับ e-commerce](<https://fastship.co/api>)
+    - [คู่มือการใช้งาน FastShip](<https://fastship.co/docs>)
+    
+    ## Key Information
+    - [ราคาค่าขนส่ง & Zones](<https://fastship.co/pricing>)
+    - [คำถามที่พบบ่อย (FAQ)](<https://fastship.co/faq>)
+    - [ประเทศปลายทางที่รองรับ](<https://fastship.co/destinations>)
+    - [Blog & Tips การส่งออก](<https://fastship.co/blog>)
+
+## Optional: Full Content

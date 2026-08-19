@@ -1,0 +1,82 @@
+generated: '2026-08-13'
+method: probed
+source: >-
+  live probes of openapi.fastship.co plus a full read of the public fastship.co,
+  kollabasia.com and cloudcommerce.co surfaces, 2026-08-13
+note: >-
+  RECORDED NON-CONFORMANCE. Cloud Commerce makes no standards or compliance claim on any
+  public page, and no probe found evidence of one. Every entry below is `conforms: false`
+  with the probe that established it. NO Conformance or Compliance pointer is emitted in
+  apis.yml — a pointer here would credit a standards posture the company does not have.
+claims_found: []
+claims_found_note: >-
+  No SOC 2, ISO 27001, PCI DSS, GDPR/PDPA statement, security page, trust center or
+  certification badge was found on cloudcommerce.co, fastship.co or kollabasia.com. Thai
+  PDPA would be the applicable regime for a Bangkok operator handling consignee personal
+  data; no PDPA notice was found beyond the FastShip privacy policy page.
+standards:
+- id: openapi
+  conforms: false
+  evidence: >-
+    No OpenAPI or Swagger document at any of /openapi.json, /openapi.yaml, /swagger.json,
+    /api-docs, /docs, /api/documentation, /docs/api-docs.json on openapi.fastship.co,
+    api.fastship.co, app.fastship.co, track.fastship.co, fastship.co or cloudcommerce.co.
+    All 404 except the SPA catch-alls noted in well-known/.
+- id: asyncapi
+  conforms: false
+  evidence: No event, streaming or webhook surface is published or advertised.
+- id: oauth2
+  conforms: false
+  evidence: >-
+    /.well-known/oauth-authorization-server 404s on every host. Authentication is an
+    email/password exchange at /api/v2/login, not an OAuth flow.
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration 404s on every host.
+- id: rfc9457
+  conforms: false
+  evidence: >-
+    Errors are application/json in a custom {message, description, data} envelope with no
+    type/title/status/detail members. See errors/cloud-commerce-problem-types.yml.
+- id: rfc9331-ratelimit-headers
+  conforms: false
+  evidence: >-
+    Serves the legacy X-RateLimit-Limit / X-RateLimit-Remaining pair, not the RFC 9331
+    RateLimit / RateLimit-Policy form, and returns no reset field.
+  note: >-
+    A legacy signal is still a signal — recorded in
+    rate-limits/cloud-commerce-rate-limits.yml — but it is not the standard.
+- id: rfc8594-sunset
+  conforms: false
+  evidence: No Sunset or Deprecation header observed on any endpoint.
+- id: rfc8615-well-known
+  conforms: false
+  evidence: >-
+    All eight probed /.well-known/ paths 404 on all seven hosts. See
+    well-known/cloud-commerce-well-known.yml.
+- id: rfc9727-api-catalog
+  conforms: false
+  evidence: /.well-known/api-catalog 404s on every host.
+- id: llmstxt
+  conforms: true
+  evidence: >-
+    https://fastship.co/llms.txt returns 200 text/plain with a hand-authored document in
+    llms.txt form — H1 title, blockquote summary, H2 link sections. Saved verbatim to
+    llms/cloud-commerce-llms.txt.
+  caveat: >-
+    Six of the ten URLs the file lists return 404 on the live site, so the document
+    conforms to the FORMAT while failing as a map. Recorded in llms/cloud-commerce-llms.yml.
+- id: idempotency
+  conforms: false
+  evidence: No Idempotency-Key or equivalent header documented or observed.
+- id: pagination
+  conforms: false
+  evidence: >-
+    Unestablished — no collection endpoint is reachable anonymously and none is
+    documented. Recorded as false rather than unknown because nothing public supports a
+    claim either way.
+- id: apis-json
+  conforms: false
+  evidence: >-
+    No apis.json at any host root. This profile's index is hosted by API Evangelist, not
+    self-hosted by the provider.

@@ -1,0 +1,73 @@
+generated: '2026-08-13'
+method: probed
+source: live probes of fastship.co, openapi.fastship.co and status.fastship.co (2026-08-13)
+note: >-
+  Cloud Commerce publishes no versioning policy, no deprecation policy and no SLA. It
+  does run a real status page. Everything below is either fetched or observed; nothing
+  is assumed.
+status_page:
+  published: true
+  url: https://status.fastship.co/
+  http_status: 200
+  title: Fastship Status
+  provider: Pulsetic
+  provider_evidence: status.fastship.co CNAMEs to app.pulsetic.com
+  machine_readable: false
+  machine_readable_note: >-
+    The page is client-side rendered — the served HTML carries the title and nothing
+    else. No JSON status endpoint, RSS/Atom incident feed or webhook was found, so an
+    agent cannot read component state without executing scripts.
+  scope: FastShip only. No status page exists for CloudMall or KOLLAB.
+versioning:
+  policy_published: false
+  scheme: path-based major version
+  current: v2
+  note: >-
+    /api/v1 and /api/v2 both return the same "Welcome to API Version 2.0" banner and
+    /api/v3 returns 404. There is no published statement of what v1 now means, whether
+    it is frozen, aliased, or retired.
+deprecation:
+  policy_published: false
+  sunset_header: false
+  deprecation_header: false
+  rfc8594: false
+  note: >-
+    No Sunset or Deprecation response header was observed on any probed endpoint, and no
+    deprecation or API-changes page exists. No Deprecation pointer is emitted in
+    apis.yml.
+sla:
+  published: false
+  note: No uptime commitment, credit schedule or support-response SLA is published.
+changelog:
+  published: false
+  note: >-
+    No dated API changelog or release-notes page was found on fastship.co,
+    openapi.fastship.co or cloudcommerce.co. The FastShip site blog is marketing and
+    shipping-regulation content, not API release notes.
+maintenance_signals:
+  note: >-
+    Observed, dated evidence about how current the surface is. Recorded because it is the
+    only decay evidence this provider publishes — inadvertently, in response headers and
+    page furniture.
+  signals:
+  - signal: runtime versions in server banners
+    observed: PHP/7.4.27 and PHP/7.4.33; Laravel 8.83.29; Apache 2.4.52; OpenSSL 1.1.1n
+    source: https://openapi.fastship.co/ and https://api.fastship.co/ response headers
+    note: >-
+      PHP 7.4 and Laravel 8 are both past their upstream end-of-life. Stated as an
+      observed fact about the deployed stack, not as a security assessment.
+  - signal: site copyright range
+    observed: Copyright © 2017-2019 FastShip.co
+    source: https://fastship.co/api footer
+  - signal: dead product domain
+    observed: cloudmall.asia does not resolve (NXDOMAIN)
+    source: DNS A/CNAME lookup, 2026-08-13
+    note: >-
+      CloudMall is one of the three platforms Cloud Commerce markets, and its domain is
+      linked from the cloudcommerce.co homepage. The domain no longer resolves.
+  - signal: documentation host unreachable
+    observed: docs.fastship.co resolves to 13.251.14.8 but accepts no TCP connection
+    source: HTTPS and HTTP connect attempts, both timed out after 20-30s
+deprecated_operations: []
+deprecated_operations_note: >-
+  No OpenAPI exists, so no deprecated operations can be derived.

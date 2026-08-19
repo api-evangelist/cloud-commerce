@@ -1,0 +1,81 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  npm registry, PyPI, RubyGems, crates.io, Packagist, NuGet, pkg.go.dev, Maven Central and
+  the GitHub org namespace, searched 2026-08-13
+note: >-
+  RECORDED ABSENCE. Cloud Commerce publishes no first-party client library on any package
+  registry, and operates no public GitHub organization. No SDKs pointer is emitted in
+  apis.yml. Three near-miss packages were found and REJECTED on ownership grounds — they
+  are recorded below so a future run does not re-adopt them.
+package_count: 0
+official_package_count: 0
+packages: []
+rejected_candidates:
+- name: cloudcommerce
+  registry: npm
+  url: https://registry.npmjs.org/cloudcommerce
+  status: 200
+  version: null
+  published: null
+  official: false
+  rejected_because: >-
+    Describes itself as an "Open fair-code headless commerce platform: API-first,
+    microservices based, event driven and cloud native" — the E-Com Plus project. Nothing
+    connects it to the Bangkok company. Name collision only.
+- name: kollab
+  registry: npm
+  url: https://registry.npmjs.org/kollab
+  status: 200
+  version: null
+  published: null
+  official: false
+  rejected_because: >-
+    "Kollab workspace CLI", repository github.com/KollabTeam/Kollab, homepage kollab.im.
+    Unrelated to Cloud Commerce's KOLLAB influencer platform at kollabasia.com.
+- name: fastship
+  registry: pypi
+  url: https://pypi.org/pypi/fastship/json
+  status: 200
+  version: null
+  published: null
+  official: false
+  rejected_because: >-
+    "Local-first Python project scaffolding and release tools", source
+    github.com/answerdotai/fastship. Answer.AI's release CLI. Name collision only.
+- name: Cloud-Commerce
+  registry: github-org
+  url: https://github.com/Cloud-Commerce
+  status: 200
+  official: false
+  rejected_because: >-
+    A GitHub organization literally named "Cloud Commerce" exists with six Java/Spring
+    microservice repos (gateway-service, authN-service, authZ-lib, service-registry,
+    user-service, microservices-orchestration), created 2025-03-23, with no website,
+    location or email set. Cloud Commerce Bangkok runs a PHP/Laravel and WordPress stack.
+    Nothing ties the org to the company. NOT adopted.
+registries_searched:
+- registry: npm
+  result: no first-party package
+- registry: pypi
+  result: no first-party package
+- registry: rubygems
+  result: no first-party package
+- registry: packagist
+  result: no first-party package
+  note: >-
+    Checked because the API is a Laravel application, which would make Packagist the
+    natural home for a first-party PHP client. None published.
+- registry: crates.io
+  result: no first-party package
+- registry: nuget
+  result: no first-party package
+- registry: maven-central
+  result: no first-party package
+- registry: pkg.go.dev
+  result: no first-party package
+cdn_distribution:
+  found: false
+  note: >-
+    The fastship.co/api page is titled "API & Widget", implying an embeddable widget, but
+    no loader script, CDN URL or unpkg/jsDelivr build is published anywhere on the site.

@@ -1,6 +1,7 @@
 generated: '2026-08-13'
 method: probed
 source: live response headers from https://openapi.fastship.co/api/v2 (2026-08-13)
+name: Cloud Commerce API Rate Limits
 note: >-
   Cloud Commerce documents no rate limits anywhere public. The numbers below were NOT
   read from documentation — they were observed on the wire on anonymous requests to the

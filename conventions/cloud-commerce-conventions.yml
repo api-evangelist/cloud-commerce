@@ -1,11 +1,9 @@
 generated: '2026-08-13'
 method: probed
 source: live anonymous requests to https://openapi.fastship.co/api/v2 (2026-08-13)
-note: >-
-  Cross-cutting runtime semantics for the FastShip Open API. Cloud Commerce publishes no
-  developer reference, so every entry here is either OBSERVED on the wire or explicitly
-  marked unknown. Nothing is inferred from convention or from what a Laravel application
-  usually does.
+note: Cross-cutting runtime semantics for the FastShip Open API. Cloud Commerce publishes no developer reference, so every
+  entry here is either OBSERVED on the wire or explicitly marked unknown. Nothing is inferred from convention or from what
+  a Laravel application usually does.
 api: FastShip Open API
 baseURL: https://openapi.fastship.co/api/v2
 versioning:
@@ -19,9 +17,8 @@ versioning:
   - path: /api/v1
     status: 200
     body: Welcome to API Version 2.0
-    note: >-
-      /api/v1 answers with the v2 banner. Either v1 is aliased to v2 or the banner is
-      hard-coded; a client cannot tell which version it is talking to from the path.
+    note: /api/v1 answers with the v2 banner. Either v1 is aliased to v2 or the banner is hard-coded; a client cannot tell
+      which version it is talking to from the path.
   - path: /api/v3
     status: 404
   header_negotiation: false
@@ -44,17 +41,14 @@ error_envelope:
     - Login failed
     - Email or Password incorrect. Please try again.
     - For logged in and generate Token.
-    note: >-
-      Human-readable prose. Doubles as the endpoint's purpose statement on a 400, so it
-      is not a stable machine-readable error string.
+    note: Human-readable prose. Doubles as the endpoint's purpose statement on a 400, so it is not a stable machine-readable
+      error string.
   - field: data
-    note: >-
-      Either an empty array on a bare failure, or an object carrying data.error with
-      per-field validation messages (Laravel validator output).
+    note: Either an empty array on a bare failure, or an object carrying data.error with per-field validation messages (Laravel
+      validator output).
   machine_readable_code: false
-  machine_readable_code_note: >-
-    No error code, type URI or enum is returned. A client must string-match on
-    `description` — or on the HTTP status alone — to distinguish failures.
+  machine_readable_code_note: No error code, type URI or enum is returned. A client must string-match on `description` — or
+    on the HTTP status alone — to distinguish failures.
   status_codes_observed:
   - 200
   - 301
@@ -63,21 +57,17 @@ error_envelope:
   - 404
   debug_mode:
     enabled: true
-    evidence: >-
-      Unmatched routes under /api/v2 return a JSON body containing
-      "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException"
-      together with the server-side file path of the throwing class, rather than a plain
-      404 envelope.
-    note: >-
-      Recorded as an API-quality observation about the error contract: the 404 shape does
-      not match the documented-by-behavior {message, description, data} envelope used by
-      the routes that do exist, so a client cannot parse errors uniformly.
+    evidence: 'Unmatched routes under /api/v2 return a JSON body containing "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException"
+      together with the server-side file path of the throwing class, rather than a plain 404 envelope.'
+    note: 'Recorded as an API-quality observation about the error contract: the 404 shape does not match the documented-by-behavior
+      {message, description, data} envelope used by the routes that do exist, so a client cannot parse errors uniformly.'
 idempotency:
   supported: unknown
   header: null
-  note: >-
-    No Idempotency-Key or equivalent header was observed or documented. NOT claimed —
-    no Idempotency pointer is emitted in apis.yml.
+  note: No Idempotency-Key or equivalent header was observed or documented. NOT claimed — no Idempotency pointer is emitted
+    in apis.yml.
+  coverage: none
+  coverage_note: No idempotency key or replay protection is documented or was observed; the provider publishes no reference.
 pagination:
   style: unknown
   note: No collection endpoint is reachable anonymously, so pagination is unobservable.
@@ -104,14 +94,12 @@ cors:
   observed_on:
   - https://api.fastship.co/
   - https://openapi.fastship.co/api/v2/login
-  note: >-
-    Browser clients can call the API cross-origin from any origin. Recorded as an
-    observed runtime fact about the surface.
+  note: Browser clients can call the API cross-origin from any origin. Recorded as an observed runtime fact about the surface.
 transport:
   https: true
   http2: true
   hsts:
-    api.fastship.co: 'max-age=31536000; includeSubDomains'
+    api.fastship.co: max-age=31536000; includeSubDomains
     openapi.fastship.co: not observed
   server_banner:
     openapi.fastship.co: Apache/2.4.52 (Unix) OpenSSL/1.1.1n, PHP/7.4.27, Laravel 8.83.29

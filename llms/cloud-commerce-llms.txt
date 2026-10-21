@@ -1,20 +1,99 @@
-# FastShip by CloudCommerce
+# CloudCommerce
 
-> FastShip คือแพลตฟอร์ม logistics ระหว่างประเทศสำหรับ e-commerce ไทย
-> ให้บริการ SME และผู้ขายออนไลน์ที่ต้องการส่งสินค้าไปต่างประเทศ
-> มีผู้ใช้งานกว่า 20,000 ราย และประสบการณ์ 15 ปีในตลาด
+> Want to sell overseas? CloudCommerce is an ecosystem of four businesses taking Thai entrepreneurs global: FastShip ships to 100+ countries with duty and tax worked out, CONNEX runs every sales channel, KOLLAB and CloudMall find buyers abroad.
+> อยากขายของไปต่างประเทศ? CloudCommerce คืออีโคซิสเต็มของ 4 ธุรกิจที่พาผู้ประกอบการไทยบุกตลาดโลก: FastShip ส่งพัสดุไปกว่า 100 ประเทศพร้อมคำนวณภาษีให้, CONNEX รวมออเดอร์ทุกช่องทาง, KOLLAB และ CloudMall ช่วยหาลูกค้าต่างประเทศ
 
-## Core Services
-    - [การส่งสินค้าระหว่างประเทศ](<https://fastship.co/services/international>)
-    - [เปรียบเทียบราคาขนส่ง](<https://fastship.co/compare>)
-    - [Track & Trace](<https://fastship.co/tracking>)
-    - [API Integration สำหรับ e-commerce](<https://fastship.co/api>)
-    - [คู่มือการใช้งาน FastShip](<https://fastship.co/docs>)
-    
-    ## Key Information
-    - [ราคาค่าขนส่ง & Zones](<https://fastship.co/pricing>)
-    - [คำถามที่พบบ่อย (FAQ)](<https://fastship.co/faq>)
-    - [ประเทศปลายทางที่รองรับ](<https://fastship.co/destinations>)
-    - [Blog & Tips การส่งออก](<https://fastship.co/blog>)
+CloudCommerce is a Bangkok holding company: an ecosystem of four separate businesses, each running on its own, that take Thai entrepreneurs and brands from their first parcel abroad to a brand that stands in the world market (Ship · Sell · Scale). Use one business or several together.
 
-## Optional: Full Content
+## Businesses
+
+- [FastShip](https://fastship.co) — Ship · Logistics: All your cross-border shipping. One platform. Every carrier around the world on one account — costs, customs and tracking automated end to end, with SME volume pooled into big-player rates. (ไทย: งานส่งข้ามประเทศทั้งหมด จบในแพลตฟอร์มเดียว ทุกขนส่งทั่วโลกในบัญชีเดียว ค่าส่ง พิธีการศุลกากร และการติดตาม ทำงานอัตโนมัติตั้งแต่ต้นจนจบ พร้อมรวมยอด SME ให้ได้เรตระดับรายใหญ่) — page: https://www.cloudcommerce.co/solutions/fastship (ไทย: https://www.cloudcommerce.co/th/solutions/fastship)
+- [CONNEX](https://www.connexglobal.co) — Sell · Operations: The central nervous system for cross-border sellers. One platform to build, run and scale every channel — the intelligence platform that runs the seller's whole business, so you can spend your time winning new markets. (ไทย: ศูนย์บัญชาการของผู้ขายข้ามพรมแดน แพลตฟอร์มเดียวที่ช่วยสร้าง ดูแล และขยายทุกช่องทางขาย ช่วยรันงานทั้งธุรกิจของคุณ เพื่อให้คุณมีเวลาไปบุกตลาดใหม่) — page: https://www.cloudcommerce.co/solutions/connex (ไทย: https://www.cloudcommerce.co/th/solutions/connex)
+- [CloudMall](https://thaimall.co) — Scale · Distribution: A reseller network that sells your product for you. CloudMall is a distribution platform — list once, and a network of resellers, shops and brands takes your product to market everywhere. (ไทย: เครือข่ายรีเซลเลอร์ที่ขายสินค้าให้คุณ CloudMall คือแพลตฟอร์มกระจายสินค้า — ลงสินค้าครั้งเดียว แล้วเครือข่ายรีเซลเลอร์ ร้านค้า และแบรนด์ จะพาสินค้าของคุณออกสู่ตลาดทุกที่) — page: https://www.cloudcommerce.co/solutions/cloudmall (ไทย: https://www.cloudcommerce.co/th/solutions/cloudmall)
+- [KOLLAB](https://kollabasia.com) — Scale · Demand: Grow demand with creators who sell for you. Influencer marketing, done for you — the right creators, matched by AI, managed end to end. (ไทย: สร้างดีมานด์ ด้วยครีเอเตอร์ที่ขายให้คุณ การตลาดผ่านอินฟลูเอนเซอร์แบบครบวงจร — ให้ AI จับคู่ครีเอเตอร์ที่ใช่ แล้วเราดูแลให้ตั้งแต่ต้นจนจบ) — page: https://www.cloudcommerce.co/solutions/kollab (ไทย: https://www.cloudcommerce.co/th/solutions/kollab)
+
+## FAQ (ไทย)
+
+### ขายของไปต่างประเทศ ต้องเริ่มต้นอย่างไร?
+
+เริ่มจากเล็กและเจาะจง: สินค้าหนึ่งถึงสองตัว ตลาดหนึ่งถึงสองประเทศ และวิธีขายหนึ่งทาง จากนั้นตอบสามข้อ คือผู้ซื้อจะเจอคุณที่ไหน (ร้านของตัวเอง มาร์เก็ตเพลส หรือรีเซลเลอร์) ออเดอร์จะไปถึงมือเขาอย่างไร และใครจะพาลูกค้ากลุ่มแรกมา แต่ละธุรกิจของ CloudCommerce ดูแลหนึ่งในส่วนเหล่านี้ คุณจึงเริ่มจากส่วนที่ต้องการก่อนได้
+
+### ควรเริ่มขายประเทศไหนก่อน?
+
+เลือกตลาดที่เห็นดีมานด์อยู่แล้ว เช่น มีลูกค้าจากต่างประเทศทักมา มีคนค้นหาหรือมีสินค้าแบบเดียวกันบนมาร์เก็ตเพลส หรือมีชุมชนที่ซื้อสินค้าไทยอยู่แล้ว เลือกตลาดที่การส่งไม่ยุ่งยากและกฎระเบียบชัดเจน เรียนรู้จากออเดอร์แรกๆ แล้วค่อยเพิ่มประเทศถัดไป เริ่มทีละตลาดเร็วกว่าและประหยัดกว่าเปิดห้าตลาดพร้อมกัน
+
+### ควรขายบนมาร์เก็ตเพลสหรือร้านของตัวเอง?
+
+ผู้ขายส่วนใหญ่ทำทั้งสองอย่าง มาร์เก็ตเพลสระดับโลกอย่าง Amazon, eBay, Etsy หรือ TikTok Shop มีทราฟฟิกพร้อมอยู่แล้ว ส่วนร้านของตัวเองบน Shopify หรือ WooCommerce ช่วยสร้างแบรนด์และรักษาความสัมพันธ์กับลูกค้า การขายหลายช่องทางพร้อมกันเป็นเรื่องปกติ ส่วนที่ยากคือการคุมออเดอร์และสต็อกให้ตรงกัน ซึ่งเป็นงานที่ CONNEX สร้างมาเพื่อทำโดยเฉพาะ
+
+### ขายตรงให้ลูกค้าหรือผ่านรีเซลเลอร์ดีกว่ากัน?
+
+การขายตรงเก็บกำไรได้มากกว่าและคุมแบรนด์ได้เต็มที่ แต่ต้องรับภาระทั้งการตลาดและการจัดส่งเอง ส่วนรีเซลเลอร์และตัวแทนจำหน่ายช่วยเข้าถึงผู้ซื้อที่คุณเข้าไม่ถึงคนเดียว แลกกับกำไรต่อชิ้นที่น้อยลง หลายแบรนด์เริ่มจากขายตรงเพื่อเรียนรู้ตลาด แล้วเพิ่มรีเซลเลอร์เพื่อขยาย โดย CloudMall มีเครือข่ายร้านค้า รีเซลเลอร์ และตัวแทนรองรับตรงนี้
+
+### ไม่มีทีมการตลาด จะหาลูกค้าต่างประเทศได้อย่างไร?
+
+ใช้คนที่ลูกค้าในอนาคตของคุณเชื่อถืออยู่แล้ว ครีเอเตอร์และอินฟลูเอนเซอร์ในตลาดเป้าหมายแนะนำสินค้าได้ในแบบที่โฆษณาทำไม่ได้ และแคมเปญที่ดีวัดกันที่ยอดขาย ไม่ใช่ยอดวิว KOLLAB จับคู่แบรนด์กับครีเอเตอร์ทุกขนาดและดูแลแคมเปญตั้งแต่บรีฟจนถึงผลลัพธ์ คุณจึงไม่ต้องมีทีมในองค์กร
+
+### SME หรือร้านเล็กๆ ขายของไปต่างประเทศได้ไหม?
+
+ได้ ไม่จำเป็นต้องมียอดระดับบริษัทใหญ่ สิ่งที่ต้องมีคือตลาดแรกที่ชัดเจน สินค้าที่เหมาะกับตลาดนั้น และพาร์ตเนอร์ที่รู้เส้นทางอยู่แล้ว เริ่มจากออเดอร์เดียว เรียนรู้ว่าตลาดต้องการอะไร แล้วเพิ่มช่องทางและประเทศไปตามการเติบโต
+
+### เรื่องการส่ง ภาษี และศุลกากร ต้องวางแผนอะไรบ้าง?
+
+คำนวณต้นทุนถึงมือผู้ซื้อก่อนตั้งราคา ทั้งค่าส่ง อากรและภาษีนำเข้าของประเทศปลายทาง และค่าธรรมเนียมต่างๆ ตัดสินใจว่าใครจะเป็นผู้จ่ายอากร และทำเอกสารศุลกากรให้ถูกต้อง เพราะความผิดพลาดตรงนี้ทำให้พัสดุล่าช้า FastShip ดูแลเรื่องขนส่ง อากร และเอกสารศุลกากรในส่วนของการส่ง ดูรายละเอียดเพิ่มเติมได้ในหน้าของ FastShip
+
+### CloudCommerce คืออะไร?
+
+CloudCommerce Co., Ltd. เป็นบริษัทแม่ในกรุงเทพฯ ที่สร้างอีโคซิสเต็มการค้าข้ามพรมแดนเพื่อผู้ประกอบการไทย ประกอบด้วยสี่ธุรกิจที่แยกกันดำเนินงาน: FastShip (การส่ง), CONNEX (การขายและงานหลังบ้าน), KOLLAB (การตลาดผ่านครีเอเตอร์) และ CloudMall (การกระจายสินค้า) รวมกันส่งพัสดุแล้วกว่า 1 ล้านชิ้น ไปกว่า 100 ประเทศ
+
+### ต้องใช้ครบทั้งสี่ธุรกิจไหม?
+
+ไม่ต้อง แต่ละธุรกิจมีทีม ผลิตภัณฑ์ และลูกค้าของตัวเอง และใช้แยกกันได้ ทั้งหมดถูกสร้างมาให้ทำงานเคียงข้างกัน เช่น ออเดอร์ที่ขายผ่าน CONNEX ส่งด้วย FastShip ได้ แต่ไม่มีข้อบังคับให้ต้องใช้ทั้งหมด
+
+## FAQ (English)
+
+### How do I start selling abroad?
+
+Start small and specific: one or two products, one or two markets, one way to sell. Then answer three questions — where will buyers find you (your own store, marketplaces or resellers), how will orders reach them, and who will bring the first customers. Each CloudCommerce business covers one of those parts, and you can start with just the one you need.
+
+### Which country should I sell to first?
+
+Pick the market where you already see demand: customers who message you from abroad, searches and marketplace listings for products like yours, or a community that already buys Thai goods. Favour markets where delivery is straightforward and the rules are clear, learn from the first orders, then add the next country. Starting with one market is faster and cheaper than opening five at once.
+
+### Should I sell on marketplaces or through my own store?
+
+Most sellers do both. A global marketplace such as Amazon, eBay, Etsy or TikTok Shop brings ready-made traffic; your own Shopify or WooCommerce store builds your brand and keeps the customer relationship. Selling on several channels at once is normal — the hard part is keeping orders and stock in sync, which is what CONNEX is built for.
+
+### Is it better to sell direct to customers or through resellers?
+
+Selling direct keeps more margin and gives you control of the brand, but you carry the marketing and the fulfilment. Resellers and distributors reach buyers you could not reach alone, at a lower margin per item. Many brands start direct to learn the market, then add resellers to scale — CloudMall gives them a network of shops, resellers and agents to do that.
+
+### How do I find customers abroad without a marketing team?
+
+Use people your future customers already trust. Creators and influencers in the target market can introduce a product in a way advertising cannot, and a good campaign is measured by sales, not views. KOLLAB matches your brand with creators of every size and runs the campaign from brief to results, so you do not need an in-house team.
+
+### Can a small business or SME sell abroad?
+
+Yes. You do not need big-company volume — you need a clear first market, a product that suits it and partners who already know the route. Start with a single order, learn what the market asks for, and add channels and countries as it grows.
+
+### What should I plan for in shipping, duties and customs?
+
+Work out the landed cost before you set a price: shipping, import duty and taxes in the destination country, and fees. Decide whether you or the buyer pays duties, and make sure the customs paperwork is right, because mistakes there delay parcels. FastShip handles the carriers, duties and customs documents for the shipping part, and the details are on its own page.
+
+### What is CloudCommerce?
+
+CloudCommerce Co., Ltd. is a Bangkok-based holding company building a cross-border commerce ecosystem for Thai entrepreneurs. It is made up of four businesses that each run on their own: FastShip (shipping), CONNEX (selling and operations), KOLLAB (creator marketing) and CloudMall (distribution). Together they have moved more than 1 million shipments to over 100 countries.
+
+### Do I have to use all four businesses?
+
+No. Each business has its own team, product and customers, and you can use one on its own. They are built to work side by side — for example, orders sold through CONNEX can ship with FastShip — but nothing requires you to take them all.
+
+## Contact
+
+- Website (English): https://www.cloudcommerce.co/
+- Website (ไทย): https://www.cloudcommerce.co/th
+- Articles: https://www.cloudcommerce.co/articles (ไทย: https://www.cloudcommerce.co/th/articles)
+- About: https://www.cloudcommerce.co/about (ไทย: https://www.cloudcommerce.co/th/about)
+- Careers: https://www.cloudcommerce.co/careers (ไทย: https://www.cloudcommerce.co/th/careers) — open roles: https://cloudcommerce.breezy.hr/
+- Privacy Policy: https://www.cloudcommerce.co/privacy (ไทย: https://www.cloudcommerce.co/th/privacy)
+- Location: Bangkok, Thailand

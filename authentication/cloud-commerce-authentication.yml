@@ -1,17 +1,16 @@
 generated: '2026-08-13'
 method: probed
 source: https://openapi.fastship.co/api/v2/login
-note: >-
-  PROBED, NOT DERIVED. Cloud Commerce publishes no OpenAPI and no public authentication
-  reference, so derive-authentication.py had nothing to read. This profile is built
-  entirely from anonymous live requests against the FastShip Open API host, and records
-  only what those responses actually proved. No scheme, header name, token lifetime or
-  scope is asserted that was not observed.
+note: PROBED, NOT DERIVED. Cloud Commerce publishes no OpenAPI and no public authentication reference, so derive-authentication.py
+  had nothing to read. This profile is built entirely from anonymous live requests against the FastShip Open API host, and
+  records only what those responses actually proved. No scheme, header name, token lifetime or scope is asserted that was
+  not observed.
 apis:
 - name: FastShip Open API
   baseURL: https://openapi.fastship.co/api/v2
   schemes:
-  - id: login_token
+  - &id001
+    id: login_token
     type: http
     style: bearer-token-via-credential-exchange
     confidence: medium
@@ -25,20 +24,15 @@ apis:
     credentials:
     - field: email
       required: true
-      evidence: >-
-        POST {} returned 400 with data.error.email = ["The email field is required."]
+      evidence: POST {} returned 400 with data.error.email = ["The email field is required."]
     - field: password
       required: true
-      evidence: >-
-        POST {} returned 400 with data.error.password = ["The password field is required."]
+      evidence: POST {} returned 400 with data.error.password = ["The password field is required."]
     purpose_stated_by_provider: For logged in and generate Token.
-    note: >-
-      The endpoint's own 400 body states its purpose is "For logged in and generate
-      Token." A bad-credential POST returns 401 with "Email or Password incorrect."
-      The response header name that carries the issued token, its lifetime, its refresh
-      mechanism and the header an authenticated call must send are NOT public and were
-      NOT probed — issuing a token would require real credentials, which this pipeline
-      never uses.
+    note: The endpoint's own 400 body states its purpose is "For logged in and generate Token." A bad-credential POST returns
+      401 with "Email or Password incorrect." The response header name that carries the issued token, its lifetime, its refresh
+      mechanism and the header an authenticated call must send are NOT public and were NOT probed — issuing a token would
+      require real credentials, which this pipeline never uses.
 evidence:
 - url: https://openapi.fastship.co/api/v2
   method: GET
@@ -63,9 +57,8 @@ evidence:
 gaps:
 - no OpenAPI or Swagger document is published on any Cloud Commerce host
 - no public authentication reference page
-- >-
-  no /.well-known/openid-configuration or /.well-known/oauth-authorization-server on any
-  host, so this is not an OAuth or OIDC surface
-- >-
-  the authenticated request header (Authorization: Bearer vs a custom header) is
-  undocumented and unverifiable without credentials
+- no /.well-known/openid-configuration or /.well-known/oauth-authorization-server on any host, so this is not an OAuth or
+  OIDC surface
+- 'the authenticated request header (Authorization: Bearer vs a custom header) is undocumented and unverifiable without credentials'
+schemes:
+- *id001

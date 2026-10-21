@@ -1,0 +1,110 @@
+generated: '2026-10-20'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 8
+  own: 3
+  other_domain: 5
+  platform: 0
+  roles:
+  - api
+  - identity
+  - other
+  - status
+  - support
+  - website
+hosts:
+- host: api.cloudcommerce.co
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: cloudcommerce.co
+  role: api
+  relation: own
+- host: api.fastship.co
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: fastship.co
+  role: api
+  relation: other-domain
+- host: app.fastship.co
+  found_by:
+  - pointer
+  - probed
+  - well-known
+  types:
+  - SignUp
+  - Login
+  serves: []
+  registrable_domain: fastship.co
+  role: identity
+  relation: other-domain
+- host: cloudcommerce.co
+  found_by:
+  - pointer
+  - probed
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  serves:
+  - hosting
+  vendor: vercel
+  registrable_domain: cloudcommerce.co
+  role: website
+  relation: own
+- host: fastship.co
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Support
+  - HelpCenter
+  - Blog
+  - PrivacyPolicy
+  serves:
+  - docs
+  registrable_domain: fastship.co
+  role: support
+  relation: other-domain
+- host: openapi.fastship.co
+  found_by:
+  - apis[]
+  - probed
+  - contract-discovery
+  - well-known
+  types: []
+  serves:
+  - api
+  registrable_domain: fastship.co
+  role: other
+  relation: other-domain
+- host: status.fastship.co
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - StatusPage
+  serves: []
+  registrable_domain: fastship.co
+  role: status
+  relation: other-domain
+- host: www.cloudcommerce.co
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: cloudcommerce.co
+  role: other
+  relation: own
